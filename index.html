@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optam Building Group · Custom Home Builders · Sunshine Coast QLD</title>
+<meta name="description" content="Optam Building Group — premium custom home builders on the Sunshine Coast, Queensland. Design · Build · Develop. Beautiful new homes and major renovations for lifestyle and investment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Colour palette */
+    --bg-primary: #0E0E0E;
+    --bg-secondary: #161616;
+    --bg-divider: #1E1E1E;
+    --bg-footer: #080808;
+    --gold: #C9A96E;
+    --gold-light: #E8C98A;
+    --text-primary: #F5F2ED;
+    --text-secondary: #A09A91;
+    --border-line: rgba(201, 169, 110, 0.2);
+
+    /* Typography */
+    --font-head: 'Playfair Display', Georgia, serif;
+    --font-label: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* Layout */
+    --maxw: 1280px;
+    --nav-h: 84px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  img { display: block; max-width: 100%; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ---------- Typography helpers ---------- */
+  .overline {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--gold);
+    display: inline-block;
+    margin-bottom: 22px;
+  }
+
+  h1, h2, h3 { font-family: var(--font-head); font-weight: 500; line-height: 1.12; }
+
+  h2.section-title {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    color: var(--text-primary);
+    margin-bottom: 28px;
+    font-weight: 600;
+  }
+
+  .lead { color: var(--text-secondary); font-size: 1.05rem; }
+  .lead p { margin-bottom: 20px; }
+
+  /* ---------- Section rhythm ---------- */
+  section { position: relative; }
+  .pad { padding: 120px 0; }
+
+  hr.gold-rule {
+    border: 0;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.15;
+    margin: 0;
+  }
+
+  .thin-line {
+    width: 100%;
+    height: 1px;
+    background: var(--border-line);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-block;
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.74rem;
+    font-weight: 500;
+    padding: 18px 36px;
+    cursor: pointer;
+    border: 1px solid var(--gold);
+    transition: all 0.35s ease;
+  }
+  .btn-primary { background: var(--gold); color: #0E0E0E; }
+  .btn-primary:hover { background: transparent; color: var(--gold); }
+  .btn-outline { background: transparent; color: var(--gold); }
+  .btn-outline:hover { background: var(--gold); color: #0E0E0E; }
+
+  .btn-dark { background: #0E0E0E; color: var(--text-primary); border-color: #0E0E0E; }
+  .btn-dark:hover { background: transparent; color: #0E0E0E; border-color: #0E0E0E; }
+  .btn-white-outline { background: transparent; color: #0E0E0E; border-color: #0E0E0E; }
+  .btn-white-outline:hover { background: #0E0E0E; color: #fff; }
+
+  .link-arrow {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: gap 0.3s ease, color 0.3s ease;
+  }
+  .link-arrow:hover { gap: 18px; color: var(--gold-light); }
+
+  /* ---------- Navigation ---------- */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    background: transparent;
+    transition: background 0.4s ease, box-shadow 0.4s ease, height 0.4s ease;
+  }
+  .nav.scrolled {
+    background: var(--bg-primary);
+    box-shadow: 0 1px 0 var(--border-line), 0 10px 30px rgba(0,0,0,0.4);
+    height: 72px;
+  }
+  .nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .nav-logo img { width: 140px; height: auto; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-phone {
+    font-family: var(--font-label);
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .nav-right { display: flex; align-items: center; gap: 30px; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .hamburger span {
+    width: 26px; height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0; right: 0;
+    width: 80%; max-width: 340px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(.7,0,.3,1);
+    padding: 110px 40px 40px;
+    box-shadow: -20px 0 60px rgba(0,0,0,0.6);
+  }
+  .mobile-menu.open { transform: translateX(0); }
+  .mobile-menu ul { list-style: none; }
+  .mobile-menu li { border-bottom: 1px solid var(--border-line); }
+  .mobile-menu a {
+    display: block;
+    padding: 20px 0;
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-menu .mm-phone {
+    margin-top: 34px;
+    color: var(--gold);
+    font-family: var(--font-label);
+    letter-spacing: 0.12em;
+  }
+  .overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 998;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  .overlay.show { opacity: 1; visibility: visible; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    height: 100vh;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
+                url('https://optam.com.au/wp-content/uploads/2016/11/360-degrees-facade.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .hero-inner { max-width: 880px; padding: 0 24px; }
+  .hero h1 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: clamp(2.6rem, 6.2vw, 4.5rem);
+    line-height: 1.08;
+    margin-bottom: 26px;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+  }
+  .hero .sub {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    color: var(--text-primary);
+    max-width: 680px;
+    margin: 0 auto 40px;
+    opacity: 0.92;
+  }
+  .hero .overline { color: var(--gold-light); }
+  .hero-ctas { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 36px; left: 50%;
+    transform: translateX(-50%);
+    width: 26px; height: 26px;
+  }
+  .scroll-indicator span {
+    display: block;
+    width: 14px; height: 14px;
+    border-right: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    transform: rotate(45deg);
+    margin: 0 auto;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translate(0,0); opacity: 0.4; }
+    50% { transform: rotate(45deg) translate(6px,6px); opacity: 1; }
+  }
+
+  /* ---------- Philosophy strip ---------- */
+  .philosophy {
+    background: var(--bg-secondary);
+    text-align: center;
+    padding: 90px 0;
+  }
+  .philosophy .quote {
+    font-family: var(--font-head);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+    color: var(--text-primary);
+    max-width: 900px;
+    margin: 0 auto 60px;
+    line-height: 1.3;
+  }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+  .stat .num {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat .lbl {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-top: 14px;
+  }
+
+  /* ---------- Split sections ---------- */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .split-img { overflow: hidden; }
+  .split-img img {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    transition: transform 1.4s ease;
+  }
+  .split-img:hover img { transform: scale(1.05); }
+  .split.reverse .split-text { order: 2; }
+  .split.reverse .split-img { order: 1; }
+
+  /* ---------- Features grid ---------- */
+  .features { background: var(--bg-secondary); }
+  .features-head { max-width: 640px; margin-bottom: 64px; }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  .feature-card {
+    background: var(--bg-divider);
+    padding: 48px 38px;
+    transition: background 0.4s ease, transform 0.4s ease;
+    border-top: 2px solid transparent;
+  }
+  .feature-card:hover {
+    background: #232323;
+    transform: translateY(-4px);
+    border-top: 2px solid var(--gold);
+  }
+  .feature-card .icon {
+    font-size: 1.8rem;
+    margin-bottom: 22px;
+    display: block;
+    filter: saturate(0.6);
+  }
+  .feature-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .feature-card p { color: var(--text-secondary); font-size: 0.97rem; }
+
+  /* ---------- Portfolio ---------- */
+  .portfolio-head { max-width: 640px; margin-bottom: 56px; }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  .pf-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+  }
+  .pf-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+  }
+  .pf-item:hover img { transform: scale(1.08); }
+  .pf-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .pf-item:hover .pf-overlay { opacity: 1; transform: translateY(0); }
+  .pf-caption {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    color: var(--text-primary);
+  }
+  .pf-caption small {
+    display: block;
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.62rem;
+    color: var(--gold);
+    margin-top: 8px;
+  }
+
+  /* ---------- Founder ---------- */
+  .founder {
+    background: linear-gradient(rgba(10,10,10,0.78), rgba(10,10,10,0.86)),
+                url('https://optam.com.au/wp-content/uploads/2016/10/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+  }
+  .founder-inner { max-width: 800px; margin: 0 auto; }
+  .founder h2 { margin-bottom: 30px; }
+  .founder p { color: var(--text-primary); opacity: 0.9; margin-bottom: 20px; font-size: 1.05rem; }
+  .qbcc-badge {
+    display: inline-block;
+    margin-top: 30px;
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.75rem;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 12px 28px;
+    border-radius: 40px;
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testi-head { margin-bottom: 56px; }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .testi-card {
+    background: #1A1A1A;
+    border-left: 3px solid var(--gold);
+    padding: 44px 40px;
+  }
+  .testi-card blockquote {
+    font-family: var(--font-head);
+    font-style: italic;
+    font-size: 1.18rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 26px;
+  }
+  .testi-card cite {
+    font-family: var(--font-label);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.72rem;
+    color: var(--gold);
+  }
+
+  /* ---------- Process timeline ---------- */
+  .process-head { margin-bottom: 64px; max-width: 640px; }
+  .timeline {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 24px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) var(--bg-divider);
+  }
+  .timeline::-webkit-scrollbar { height: 6px; }
+  .timeline::-webkit-scrollbar-track { background: var(--bg-divider); }
+  .timeline::-webkit-scrollbar-thumb { background: var(--gold); }
+  .step {
+    flex: 0 0 280px;
+    position: relative;
+    padding: 0 28px;
+  }
+  .step::before {
+    content: '';
+    position: absolute;
+    top: 27px; left: 0; right: 0;
+    height: 1px;
+    background: var(--border-line);
+  }
+  .step:first-child::before { left: 50%; }
+  .step:last-child::before { right: 50%; }
+  .step .circle {
+    position: relative;
+    z-index: 2;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .step:hover .circle { background: var(--gold); color: #0E0E0E; }
+  .step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .step p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* ---------- CTA banner ---------- */
+  .cta-banner {
+    background: linear-gradient(135deg, #C9A96E, #A07840);
+    color: #0E0E0E;
+    text-align: center;
+    padding: 100px 0;
+  }
+  .cta-banner h2 {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    margin-bottom: 18px;
+    color: #0E0E0E;
+    font-weight: 600;
+  }
+  .cta-banner .sub {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.82rem;
+    margin-bottom: 42px;
+    color: #1a1404;
+  }
+  .cta-banner .cta-row { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+
+  /* ---------- Contact / form ---------- */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact-info h2 { margin-bottom: 28px; }
+  .contact-info .lead { margin-bottom: 36px; }
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-line);
+  }
+  .contact-detail .k {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.66rem;
+    color: var(--gold);
+  }
+  .contact-detail .v { font-size: 1.05rem; color: var(--text-primary); }
+
+  form { display: grid; gap: 22px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field label {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.66rem;
+    color: var(--text-secondary);
+  }
+  .field input, .field select, .field textarea {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-line);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 15px 16px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .field textarea { resize: vertical; min-height: 130px; }
+  .field select { appearance: none; cursor: pointer; }
+  .form-note {
+    font-size: 0.85rem;
+    color: var(--gold);
+    min-height: 1.2em;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--bg-footer);
+    padding: 84px 0 0;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  .footer-logo img { width: 150px; margin-bottom: 24px; }
+  .footer-logo p { color: var(--text-secondary); font-size: 0.92rem; max-width: 260px; }
+  .footer-col h4 {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.72rem;
+    color: var(--gold);
+    margin-bottom: 22px;
+    font-weight: 500;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a, .footer-col p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    transition: color 0.3s ease;
+  }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-col .contact-line { margin-bottom: 10px; line-height: 1.5; }
+  .footer-bottom {
+    text-align: center;
+    padding: 28px 0;
+    color: var(--text-secondary);
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.68rem;
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1024px) {
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .split { gap: 50px; }
+    .split-img img { height: 460px; }
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 24px; }
+    .pad { padding: 80px 0; }
+    .nav-links { display: none; }
+    .nav-right .nav-phone { display: none; }
+    .hamburger { display: flex; }
+    .hero { background-attachment: scroll; }
+    .founder { background-attachment: scroll; }
+    .split { grid-template-columns: 1fr; gap: 36px; }
+    .split.reverse .split-text { order: 1; }
+    .split.reverse .split-img { order: 2; }
+    .split-img img { height: 360px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .stats { gap: 50px; }
+    .pf-overlay { opacity: 1; transform: translateY(0); background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 70%); }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-ctas .btn, .cta-banner .btn { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#home" class="nav-logo" aria-label="Optam Building Group home">
+      <img src="https://optam.com.au/wp-content/uploads/2020/06/optam-logo-final-trans-web.png" alt="Optam Building Group">
+    </a>
+    <nav class="nav-right" aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#designbuild">Design/Build</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="tel:+61754433780" class="nav-phone">(07) 5443 3780</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#designbuild">Design/Build</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#process">Our Process</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:+61754433780" class="mm-phone">(07) 5443 3780</a>
+</aside>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
+  <div class="hero-inner reveal">
+    <span class="overline">Sunshine Coast · Queensland</span>
+    <h1>Crafting Homes of Exceptional Character</h1>
+    <p class="sub">Design · Build · Develop — Residential Property with a Sustainable Approach for Lifestyle and Investment</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Request a Consultation</a>
+      <a href="#portfolio" class="btn btn-outline">View Our Portfolio</a>
+    </div>
+  </div>
+  <a href="#philosophy" class="scroll-indicator" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ===================== PHILOSOPHY STRIP ===================== -->
+<section class="philosophy" id="philosophy">
+  <hr class="gold-rule">
+  <div class="container" style="padding-top:0;">
+    <p class="quote reveal">&ldquo;We don&rsquo;t hit the surf until you&rsquo;re 100% satisfied.&rdquo;</p>
+    <div class="stats reveal">
+      <div class="stat">
+        <div class="num">30+</div>
+        <div class="lbl">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="num">100%</div>
+        <div class="lbl">Fixed Price Contracts</div>
+      </div>
+      <div class="stat">
+        <div class="num">7+</div>
+        <div class="lbl">Year Guarantee</div>
+      </div>
+    </div>
+  </div>
+  <hr class="gold-rule" style="margin-top:90px;">
+</section>
+
+<!-- ===================== ABOUT / INTRO ===================== -->
+<section class="pad" id="about">
+  <div class="container">
+    <div class="split">
+      <div class="split-img reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2016/10/home-design01.jpg" alt="A custom Optam home design" loading="lazy">
+      </div>
+      <div class="split-text reveal">
+        <span class="overline">Queensland Home Builders</span>
+        <h2 class="section-title">At Optam, We Design, Build &amp; Develop</h2>
+        <div class="lead">
+          <p>At Optam we design, build and develop residential property with a sustainable approach for lifestyle and investment. We strive to build and support ongoing relationships with customers interested in long-term strategy and developing a portfolio of appreciating assets.</p>
+          <p>The three most common factors of concern for new clients are quality, cost and time. We provide comprehensive supervision and fixed price contracts for your peace of mind, backed by fully licenced and insured guarantees.</p>
+          <p>Building new is a big step — we have experience in supporting our clients from concept stage through to completion on projects of all types, size and style.</p>
+        </div>
+        <a href="#process" class="link-arrow" style="margin-top:14px;">Explore Our Process &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-rule">
+
+<!-- ===================== SPLIT FEATURE — DESIGN STAGE ===================== -->
+<section class="pad" id="designbuild">
+  <div class="container">
+    <div class="split reverse">
+      <div class="split-text reveal">
+        <span class="overline">Design · Build · Develop</span>
+        <h2 class="section-title">You Won&rsquo;t Be Left Staring at a Blank Sheet of Paper</h2>
+        <div class="lead">
+          <p>The design stage can be the most daunting. We work with you to carefully connect the dots of your requirements before commencing design work, creating a complete picture tailored to your needs.</p>
+          <p>Our experience and extensive client base means we are often working with customers on pre-planning for projects years ahead. The majority of our work is by word of mouth and repeat clients who build with us again and again.</p>
+        </div>
+        <a href="#contact" class="link-arrow" style="margin-top:14px;">Start Your Design &rarr;</a>
+      </div>
+      <div class="split-img reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2019/01/new-optam.jpg" alt="Optam design and build feature project" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE OPTAM ===================== -->
+<section class="features pad">
+  <div class="container">
+    <div class="features-head reveal">
+      <span class="overline">Why Choose Optam</span>
+      <h2 class="section-title">Built on Three Decades of Excellence</h2>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card reveal">
+        <span class="icon">🏛</span>
+        <h3>Specialist Design &amp; Construction</h3>
+        <p>We collaborate with specialist architects and engineers to achieve spectacular results even on difficult sites.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="icon">🌿</span>
+        <h3>Sustainable Building Leaders</h3>
+        <p>30+ years of experience with a passion for sustainable building and innovation in eco-friendly construction methods.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="icon">💰</span>
+        <h3>Competitive Pricing</h3>
+        <p>Ongoing associations with multiple contractors and suppliers means competitive pricing and higher returns on your investment.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="icon">🔒</span>
+        <h3>Extended Guarantee</h3>
+        <p>We offer a guarantee over and above the 7-year requirement, keeping your home in premium condition for life.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="icon">📋</span>
+        <h3>Fixed Price Contracts</h3>
+        <p>Fully insured through Master Builders using QBCC Residential Building Contracts for complete peace of mind.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="icon">📡</span>
+        <h3>Remote Client Service</h3>
+        <p>We use the latest technology to keep clients updated by email no matter where in the world you are.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PORTFOLIO ===================== -->
+<section class="pad" id="portfolio">
+  <div class="container">
+    <div class="portfolio-head reveal">
+      <span class="overline">Selected Works</span>
+      <h2 class="section-title">Our Project Portfolio</h2>
+    </div>
+    <div class="portfolio-grid">
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2016/12/Optam-Caldwell-1-optam.com_.au-800x600.jpg" alt="Peregian Springs Residence" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">Peregian Springs Residence<small>Custom Home</small></div></figcaption>
+      </figure>
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2016/12/Optam-Campbell-Aroona-5-optam.com_.au-800x600.jpg" alt="Aroona Contemporary" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">Aroona Contemporary<small>Custom Home</small></div></figcaption>
+      </figure>
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2016/12/Optam-8-Cocktail-1770-optam.com_.au_.jpg" alt="1770 Coastal Retreat" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">1770 Coastal Retreat<small>Lifestyle Build</small></div></figcaption>
+      </figure>
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2016/12/Optam-Schultz-sunrise-6-optam.com_.au-800x600.jpg" alt="Sunrise Elevation" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">Sunrise Elevation<small>Custom Home</small></div></figcaption>
+      </figure>
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2016/10/Gladstone.jpg" alt="Gladstone Development" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">Gladstone Development<small>Development</small></div></figcaption>
+      </figure>
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2019/01/endev1.jpg" alt="Multi-Unit Development" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">Multi-Unit Development<small>Development</small></div></figcaption>
+      </figure>
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2019/01/endev2.jpg" alt="Development Series II" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">Development Series II<small>Development</small></div></figcaption>
+      </figure>
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2019/01/endev3.jpg" alt="Development Series III" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">Development Series III<small>Development</small></div></figcaption>
+      </figure>
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2019/01/optimsed-.jpg" alt="Lifestyle Home" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">Lifestyle Home<small>Custom Home</small></div></figcaption>
+      </figure>
+      <figure class="pf-item reveal">
+        <img src="https://optam.com.au/wp-content/uploads/2019/01/optimised-4.jpg" alt="Luxury Elevation" loading="lazy">
+        <figcaption class="pf-overlay"><div class="pf-caption">Luxury Elevation<small>Custom Home</small></div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-rule">
+
+<!-- ===================== FOUNDER ===================== -->
+<section class="founder pad">
+  <div class="container">
+    <div class="founder-inner reveal">
+      <span class="overline">About the Director</span>
+      <h2 class="section-title">Hi, I&rsquo;m Royce Beale</h2>
+      <p>A chippy by trade, Registered Builder and Owner of Optam Building Group. On all our projects I personally strive to deliver the best quality products and design innovations to suit your personal and budget requirements — offering the benefits of 30+ years experience to develop your vision into the property you desire.</p>
+      <p>I am often told my personal communication and guidance throughout the building process were the most valuable inclusion in the build contract.</p>
+      <span class="qbcc-badge">QBCC 1150341</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="pad">
+  <div class="container">
+    <div class="testi-head reveal">
+      <span class="overline">Client Testimonials</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div class="testi-grid">
+      <article class="testi-card reveal">
+        <blockquote>&ldquo;To Royce&rsquo;s credit, he took each challenge with ease, and accomplished a professional outcome. His advice and honest opinion was greatly appreciated. The relationship of trust and good communication has developed a friendship that has continued long after completion.&rdquo;</blockquote>
+        <cite>— Tony &amp; Julie Caldwell, Peregian Springs</cite>
+      </article>
+      <article class="testi-card reveal">
+        <blockquote>&ldquo;We have engaged Royce Beale from Optam to undertake several projects. On each occasion we have been more than satisfied with the workmanship and end product. Royce and his competent team find cost effective solutions and ensure a seamless transition from design through to construction.&rdquo;</blockquote>
+        <cite>— Col &amp; Leonie Andersen, Gladstone</cite>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-rule">
+
+<!-- ===================== PROCESS TIMELINE ===================== -->
+<section class="pad" id="process">
+  <div class="container">
+    <div class="process-head reveal">
+      <span class="overline">Our Process</span>
+      <h2 class="section-title">From First Contact to Sparkling Handover</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="step">
+        <div class="circle">1</div>
+        <h3>First Contact</h3>
+        <p>Initial conversation to understand your goals and vision.</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <h3>Proposal</h3>
+        <p>Tailored proposal with transparent, detailed pricing.</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <h3>Prelim Stage</h3>
+        <p>Pre-design planning and site assessment.</p>
+      </div>
+      <div class="step">
+        <div class="circle">4</div>
+        <h3>Contract Stage</h3>
+        <p>Fixed price contract executed with full transparency.</p>
+      </div>
+      <div class="step">
+        <div class="circle">5</div>
+        <h3>Approvals</h3>
+        <p>Council and building approvals managed for you.</p>
+      </div>
+      <div class="step">
+        <div class="circle">6</div>
+        <h3>Construction</h3>
+        <p>Expert construction with regular site updates.</p>
+      </div>
+      <div class="step">
+        <div class="circle">7</div>
+        <h3>Sparkling Handover</h3>
+        <p>Meticulous final inspection and keys in hand.</p>
+      </div>
+      <div class="step">
+        <div class="circle">8</div>
+        <h3>Programmed Maintenance</h3>
+        <p>Ongoing care to keep your home pristine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BANNER ===================== -->
+<section class="cta-banner">
+  <div class="container reveal">
+    <h2>Ready to Build Your Dream Home?</h2>
+    <p class="sub">Optimum Process · Expert Trades · Award-Winning Architects · Premium Materials</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-dark">Request a Free Consultation</a>
+      <a href="tel:+61754433780" class="btn btn-white-outline">Call (07) 5443 3780</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="pad" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="overline">Get in Touch</span>
+        <h2 class="section-title">Let&rsquo;s Start a Conversation</h2>
+        <p class="lead">Whether you&rsquo;re planning a custom home, a major renovation or a development project, we&rsquo;d love to hear your vision. Reach out and Royce will be in touch.</p>
+        <div class="contact-detail">
+          <span class="k">Director</span>
+          <span class="v">Royce Beale — Registered Builder</span>
+        </div>
+        <div class="contact-detail">
+          <span class="k">Phone</span>
+          <span class="v"><a href="tel:+61754433780">(07) 5443 3780</a></span>
+        </div>
+        <div class="contact-detail">
+          <span class="k">Email</span>
+          <span class="v"><a href="mailto:royce@optam.com.au">royce@optam.com.au</a></span>
+        </div>
+        <div class="contact-detail">
+          <span class="k">Location</span>
+          <span class="v">Buderim, Sunshine Coast, QLD 4556</span>
+        </div>
+        <div class="contact-detail">
+          <span class="k">Licence</span>
+          <span class="v">QBCC 1150341 · Master Builders Member</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX">
+            </div>
+            <div class="field">
+              <label for="ptype">Project Type</label>
+              <select id="ptype" name="ptype">
+                <option value="New Home">New Home</option>
+                <option value="Renovation">Renovation</option>
+                <option value="Development">Development</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <div class="form-note" id="formNote" role="status" aria-live="polite"></div>
+          <button type="submit" class="btn btn-primary">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo footer-col">
+        <img src="https://optam.com.au/wp-content/uploads/2020/06/optam-logo-final-trans-web.png" alt="Optam Building Group">
+        <p>Builders of beautiful new homes and major renovations for lifestyle and investment on the Sunshine Coast.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#designbuild">Design/Build</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Custom Home Building</a></li>
+          <li><a href="#">Design/Build</a></li>
+          <li><a href="#">Renovations</a></li>
+          <li><a href="#">Unit Development</a></li>
+          <li><a href="#">OBG Civils</a></li>
+          <li><a href="#">Investment Property</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p class="contact-line">Director: Royce Beale</p>
+        <p class="contact-line">QBCC 1150341</p>
+        <p class="contact-line">P: <a href="tel:+61754433780">(07) 5443 3780</a></p>
+        <p class="contact-line">E: <a href="mailto:royce@optam.com.au">royce@optam.com.au</a></p>
+        <p class="contact-line">Buderim QLD 4556</p>
+      </div>
+      <div class="footer-col">
+        <h4>Areas Served</h4>
+        <ul>
+          <li>Mooloolaba</li>
+          <li>Alexandra Headland</li>
+          <li>Mountain Creek</li>
+          <li>Sippy Downs</li>
+          <li>Buderim</li>
+          <li>Kuluin</li>
+          <li>Sunshine Coast</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr class="gold-rule">
+  <div class="footer-bottom">
+    © 2024 Optam Building Group · All Rights Reserved · Master Builders Member · QBCC Licensed
+  </div>
+</footer>
+
+<script>
+  (function () {
+    'use strict';
+
+    /* ---------- Sticky nav transition ---------- */
+    var nav = document.getElementById('nav');
+    function onScroll() {
+      if (window.scrollY > 80) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ---------- Mobile menu ---------- */
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+    var overlay = document.getElementById('overlay');
+
+    function toggleMenu(open) {
+      hamburger.classList.toggle('open', open);
+      mobileMenu.classList.toggle('open', open);
+      overlay.classList.toggle('show', open);
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', function () {
+      toggleMenu(!mobileMenu.classList.contains('open'));
+    });
+    overlay.addEventListener('click', function () { toggleMenu(false); });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { toggleMenu(false); });
+    });
+
+    /* ---------- Scroll reveal (Intersection Observer) ---------- */
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('visible'); });
+    }
+
+    /* ---------- Contact form ---------- */
+    var form = document.getElementById('contactForm');
+    var note = document.getElementById('formNote');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      var message = form.message.value.trim();
+      if (!name || !email || !message) {
+        note.style.color = '#E0786E';
+        note.textContent = 'Please complete your name, email and message.';
+        return;
+      }
+      note.style.color = '';
+      note.textContent = 'Thank you, ' + name + '. Your enquiry has been received — Royce will be in touch shortly.';
+      form.reset();
+    });
+  })();
+</script>
+</body>
+</html>
