@@ -10,16 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Colour palette */
-    --bg-primary: #0E0E0E;
-    --bg-secondary: #161616;
-    --bg-divider: #1E1E1E;
-    --bg-footer: #080808;
-    --gold: #C9A96E;
+    /* Colour palette — light luxe */
+    --bg-primary: #F5F2EC;
+    --bg-secondary: #EBE5DA;
+    --bg-divider: #E2DBCD;
+    --bg-footer: #1A1915;
+    --gold: #B8924F;
+    --gold-deep: #8A6A2C;
     --gold-light: #E8C98A;
-    --text-primary: #F5F2ED;
-    --text-secondary: #A09A91;
-    --border-line: rgba(201, 169, 110, 0.2);
+    --text-primary: #211F1A;
+    --text-secondary: #6E675B;
+    --text-light: #F5F2ED;
+    --border-line: rgba(138, 106, 44, 0.22);
 
     /* Typography */
     --font-head: 'Playfair Display', Georgia, serif;
@@ -63,7 +65,7 @@
     letter-spacing: 0.2em;
     font-size: 0.72rem;
     font-weight: 500;
-    color: var(--gold);
+    color: var(--gold-deep);
     display: inline-block;
     margin-bottom: 22px;
   }
@@ -116,7 +118,7 @@
   .btn-outline { background: transparent; color: var(--gold); }
   .btn-outline:hover { background: var(--gold); color: #0E0E0E; }
 
-  .btn-dark { background: #0E0E0E; color: var(--text-primary); border-color: #0E0E0E; }
+  .btn-dark { background: #0E0E0E; color: var(--text-light); border-color: #0E0E0E; }
   .btn-dark:hover { background: transparent; color: #0E0E0E; border-color: #0E0E0E; }
   .btn-white-outline { background: transparent; color: #0E0E0E; border-color: #0E0E0E; }
   .btn-white-outline:hover { background: #0E0E0E; color: #fff; }
@@ -127,13 +129,13 @@
     letter-spacing: 0.18em;
     font-size: 0.74rem;
     font-weight: 500;
-    color: var(--gold);
+    color: var(--gold-deep);
     display: inline-flex;
     align-items: center;
     gap: 10px;
     transition: gap 0.3s ease, color 0.3s ease;
   }
-  .link-arrow:hover { gap: 18px; color: var(--gold-light); }
+  .link-arrow:hover { gap: 18px; color: var(--gold); }
 
   /* ---------- Navigation ---------- */
   .nav {
@@ -170,11 +172,12 @@
     letter-spacing: 0.16em;
     font-size: 0.72rem;
     font-weight: 400;
-    color: var(--text-primary);
+    color: var(--text-light);
     position: relative;
     padding: 6px 0;
     transition: color 0.3s ease;
   }
+  .nav.scrolled .nav-links a { color: var(--text-primary); }
   .nav-links a::after {
     content: '';
     position: absolute;
@@ -191,9 +194,10 @@
     letter-spacing: 0.12em;
     font-size: 0.82rem;
     font-weight: 500;
-    color: var(--gold);
+    color: var(--gold-light);
     white-space: nowrap;
   }
+  .nav.scrolled .nav-phone { color: var(--gold-deep); }
 
   .nav-right { display: flex; align-items: center; gap: 30px; }
 
@@ -208,9 +212,10 @@
   }
   .hamburger span {
     width: 26px; height: 2px;
-    background: var(--text-primary);
+    background: var(--text-light);
     transition: all 0.3s ease;
   }
+  .nav.scrolled .hamburger span { background: var(--text-primary); }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -269,6 +274,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    color: var(--text-light);
   }
   .hero-inner { max-width: 880px; padding: 0 24px; }
   .hero h1 {
@@ -283,7 +289,7 @@
     font-family: var(--font-body);
     font-weight: 300;
     font-size: clamp(1rem, 1.4vw, 1.25rem);
-    color: var(--text-primary);
+    color: var(--text-light);
     max-width: 680px;
     margin: 0 auto 40px;
     opacity: 0.92;
@@ -382,9 +388,10 @@
     border-top: 2px solid transparent;
   }
   .feature-card:hover {
-    background: #232323;
+    background: #E8E1D2;
     transform: translateY(-4px);
     border-top: 2px solid var(--gold);
+    box-shadow: 0 18px 40px rgba(80, 62, 28, 0.12);
   }
   .feature-card .icon {
     font-size: 1.8rem;
@@ -435,7 +442,7 @@
   .pf-caption {
     font-family: var(--font-head);
     font-size: 1.3rem;
-    color: var(--text-primary);
+    color: var(--text-light);
   }
   .pf-caption small {
     display: block;
@@ -457,8 +464,9 @@
     text-align: center;
   }
   .founder-inner { max-width: 800px; margin: 0 auto; }
-  .founder h2 { margin-bottom: 30px; }
-  .founder p { color: var(--text-primary); opacity: 0.9; margin-bottom: 20px; font-size: 1.05rem; }
+  .founder .overline { color: var(--gold-light); }
+  .founder h2 { margin-bottom: 30px; color: var(--text-light); }
+  .founder p { color: var(--text-light); opacity: 0.9; margin-bottom: 20px; font-size: 1.05rem; }
   .qbcc-badge {
     display: inline-block;
     margin-top: 30px;
@@ -480,9 +488,10 @@
     gap: 30px;
   }
   .testi-card {
-    background: #1A1A1A;
+    background: #FCFAF5;
     border-left: 3px solid var(--gold);
     padding: 44px 40px;
+    box-shadow: 0 14px 36px rgba(80, 62, 28, 0.08);
   }
   .testi-card blockquote {
     font-family: var(--font-head);
@@ -498,7 +507,7 @@
     text-transform: uppercase;
     letter-spacing: 0.16em;
     font-size: 0.72rem;
-    color: var(--gold);
+    color: var(--gold-deep);
   }
 
   /* ---------- Process timeline ---------- */
@@ -535,7 +544,7 @@
     border-radius: 50%;
     background: var(--bg-primary);
     border: 1px solid var(--gold);
-    color: var(--gold);
+    color: var(--gold-deep);
     font-family: var(--font-head);
     font-size: 1.3rem;
     display: flex;
@@ -634,7 +643,7 @@
   .field select { appearance: none; cursor: pointer; }
   .form-note {
     font-size: 0.85rem;
-    color: var(--gold);
+    color: var(--gold-deep);
     min-height: 1.2em;
   }
 
@@ -642,6 +651,7 @@
   footer {
     background: var(--bg-footer);
     padding: 84px 0 0;
+    color: #BDB5A6;
   }
   .footer-grid {
     display: grid;
@@ -650,29 +660,29 @@
     margin-bottom: 60px;
   }
   .footer-logo img { width: 150px; margin-bottom: 24px; }
-  .footer-logo p { color: var(--text-secondary); font-size: 0.92rem; max-width: 260px; }
+  .footer-logo p { color: #9A9284; font-size: 0.92rem; max-width: 260px; }
   .footer-col h4 {
     font-family: var(--font-label);
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 0.72rem;
-    color: var(--gold);
+    color: var(--gold-light);
     margin-bottom: 22px;
     font-weight: 500;
   }
   .footer-col ul { list-style: none; }
   .footer-col li { margin-bottom: 12px; }
   .footer-col a, .footer-col p {
-    color: var(--text-secondary);
+    color: #9A9284;
     font-size: 0.92rem;
     transition: color 0.3s ease;
   }
-  .footer-col a:hover { color: var(--gold); }
+  .footer-col a:hover { color: var(--gold-light); }
   .footer-col .contact-line { margin-bottom: 10px; line-height: 1.5; }
   .footer-bottom {
     text-align: center;
     padding: 28px 0;
-    color: var(--text-secondary);
+    color: #7C7568;
     font-family: var(--font-label);
     text-transform: uppercase;
     letter-spacing: 0.14em;
@@ -730,7 +740,7 @@
 <header class="nav" id="nav">
   <div class="container">
     <a href="#home" class="nav-logo" aria-label="Optam Building Group home">
-      <img src="https://optam.com.au/wp-content/uploads/2020/06/optam-logo-final-trans-web.png" alt="Optam Building Group">
+      <img src="optam%20logo.png" alt="Optam Building Group">
     </a>
     <nav class="nav-right" aria-label="Primary navigation">
       <ul class="nav-links">
@@ -1114,7 +1124,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-logo footer-col">
-        <img src="https://optam.com.au/wp-content/uploads/2020/06/optam-logo-final-trans-web.png" alt="Optam Building Group">
+        <img src="optam%20logo.png" alt="Optam Building Group">
         <p>Builders of beautiful new homes and major renovations for lifestyle and investment on the Sunshine Coast.</p>
       </div>
       <div class="footer-col">
