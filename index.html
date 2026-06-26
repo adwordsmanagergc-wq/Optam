@@ -14,7 +14,7 @@
     --bg-primary: #F5F2EC;
     --bg-secondary: #EBE5DA;
     --bg-divider: #E2DBCD;
-    --bg-footer: #1A1915;
+    --bg-footer: #E7E0D4;
     --gold: #B8924F;
     --gold-deep: #8A6A2C;
     --gold-light: #E8C98A;
@@ -172,12 +172,11 @@
     letter-spacing: 0.16em;
     font-size: 0.72rem;
     font-weight: 400;
-    color: var(--text-light);
+    color: var(--text-primary);
     position: relative;
     padding: 6px 0;
     transition: color 0.3s ease;
   }
-  .nav.scrolled .nav-links a { color: var(--text-primary); }
   .nav-links a::after {
     content: '';
     position: absolute;
@@ -194,10 +193,9 @@
     letter-spacing: 0.12em;
     font-size: 0.82rem;
     font-weight: 500;
-    color: var(--gold-light);
+    color: var(--gold-deep);
     white-space: nowrap;
   }
-  .nav.scrolled .nav-phone { color: var(--gold-deep); }
 
   .nav-right { display: flex; align-items: center; gap: 30px; }
 
@@ -212,10 +210,9 @@
   }
   .hamburger span {
     width: 26px; height: 2px;
-    background: var(--text-light);
+    background: var(--text-primary);
     transition: all 0.3s ease;
   }
-  .nav.scrolled .hamburger span { background: var(--text-primary); }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -269,12 +266,12 @@
     justify-content: center;
     text-align: center;
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
+    background: linear-gradient(rgba(245,242,236,0.78), rgba(245,242,236,0.84)),
                 url('https://optam.com.au/wp-content/uploads/2016/11/360-degrees-facade.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: var(--text-light);
+    color: var(--text-primary);
   }
   .hero-inner { max-width: 880px; padding: 0 24px; }
   .hero h1 {
@@ -283,18 +280,17 @@
     font-size: clamp(2.6rem, 6.2vw, 4.5rem);
     line-height: 1.08;
     margin-bottom: 26px;
-    text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 24px rgba(245,242,236,0.8);
   }
   .hero .sub {
     font-family: var(--font-body);
-    font-weight: 300;
+    font-weight: 400;
     font-size: clamp(1rem, 1.4vw, 1.25rem);
-    color: var(--text-light);
+    color: var(--text-secondary);
     max-width: 680px;
     margin: 0 auto 40px;
-    opacity: 0.92;
   }
-  .hero .overline { color: var(--gold-light); }
+  .hero .overline { color: var(--gold-deep); }
   .hero-ctas { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
 
   .scroll-indicator {
@@ -456,7 +452,7 @@
 
   /* ---------- Founder ---------- */
   .founder {
-    background: linear-gradient(rgba(10,10,10,0.78), rgba(10,10,10,0.86)),
+    background: linear-gradient(rgba(245,242,236,0.84), rgba(245,242,236,0.90)),
                 url('https://optam.com.au/wp-content/uploads/2016/10/bg2.jpg');
     background-size: cover;
     background-position: center;
@@ -464,9 +460,9 @@
     text-align: center;
   }
   .founder-inner { max-width: 800px; margin: 0 auto; }
-  .founder .overline { color: var(--gold-light); }
-  .founder h2 { margin-bottom: 30px; color: var(--text-light); }
-  .founder p { color: var(--text-light); opacity: 0.9; margin-bottom: 20px; font-size: 1.05rem; }
+  .founder .overline { color: var(--gold-deep); }
+  .founder h2 { margin-bottom: 30px; color: var(--text-primary); }
+  .founder p { color: var(--text-secondary); margin-bottom: 20px; font-size: 1.05rem; }
   .qbcc-badge {
     display: inline-block;
     margin-top: 30px;
@@ -651,7 +647,7 @@
   footer {
     background: var(--bg-footer);
     padding: 84px 0 0;
-    color: #BDB5A6;
+    color: var(--text-secondary);
   }
   .footer-grid {
     display: grid;
@@ -660,29 +656,29 @@
     margin-bottom: 60px;
   }
   .footer-logo img { width: 150px; margin-bottom: 24px; }
-  .footer-logo p { color: #9A9284; font-size: 0.92rem; max-width: 260px; }
+  .footer-logo p { color: var(--text-secondary); font-size: 0.92rem; max-width: 260px; }
   .footer-col h4 {
     font-family: var(--font-label);
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 0.72rem;
-    color: var(--gold-light);
+    color: var(--gold-deep);
     margin-bottom: 22px;
     font-weight: 500;
   }
   .footer-col ul { list-style: none; }
   .footer-col li { margin-bottom: 12px; }
   .footer-col a, .footer-col p {
-    color: #9A9284;
+    color: var(--text-secondary);
     font-size: 0.92rem;
     transition: color 0.3s ease;
   }
-  .footer-col a:hover { color: var(--gold-light); }
+  .footer-col a:hover { color: var(--gold-deep); }
   .footer-col .contact-line { margin-bottom: 10px; line-height: 1.5; }
   .footer-bottom {
     text-align: center;
     padding: 28px 0;
-    color: #7C7568;
+    color: var(--text-secondary);
     font-family: var(--font-label);
     text-transform: uppercase;
     letter-spacing: 0.14em;
